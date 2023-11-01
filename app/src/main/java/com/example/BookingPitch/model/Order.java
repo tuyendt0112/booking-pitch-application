@@ -1,0 +1,147 @@
+package com.example.BookingPitch.model;
+
+import static androidx.room.ForeignKey.CASCADE;
+
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
+
+import java.io.Serializable;
+
+@Entity(tableName = "ORDERS",foreignKeys = {@ForeignKey(entity = Customer.class,parentColumns = "id",childColumns = "customerId",onDelete = CASCADE),
+        @ForeignKey(entity = Pitch.class,parentColumns = "id",childColumns = "pitchId",onDelete = CASCADE),
+        @ForeignKey(entity = Manager.class,parentColumns = "id",childColumns = "managerId",onDelete = CASCADE)})
+public class Order implements Serializable {
+
+    private static Order INSTANCE = null;
+
+    public static synchronized Order getInstance()
+    {
+        if (INSTANCE == null) {
+            INSTANCE = new Order();
+        }
+        return(INSTANCE);
+    }
+
+    @PrimaryKey
+    private int id;
+    private int managerId;
+    private int customerId;
+    private int pitchId;
+    private String dateCreate;
+    private String datePlay;
+    private int totalPitchMoney;
+    private int totalServiceMoney;
+    private int chiPhiKhac;
+    private int total;
+    private int status;
+    private int soCa;
+    private int soLanCapNhat = 1;
+
+    public Order() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public int getPitchId() {
+        return pitchId;
+    }
+
+    public void setPitchId(int pitchId) {
+        this.pitchId = pitchId;
+    }
+
+    public String getDateCreate() {
+        return dateCreate;
+    }
+
+    public void setDateCreate(String dateCreate) {
+        this.dateCreate = dateCreate;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public int getTotalPitchMoney() {
+        return totalPitchMoney;
+    }
+
+    public void setTotalPitchMoney(int totalPitchMoney) {
+        this.totalPitchMoney = totalPitchMoney;
+    }
+
+    public String getDatePlay() {
+        return datePlay;
+    }
+
+    public void setDatePlay(String datePlay) {
+        this.datePlay = datePlay;
+    }
+
+    public int getSoCa() {
+        return soCa;
+    }
+
+    public void setSoCa(int soCa) {
+        this.soCa = soCa;
+    }
+
+    public int getTotalServiceMoney() {
+        return totalServiceMoney;
+    }
+
+    public void setTotalServiceMoney(int totalServiceMoney) {
+        this.totalServiceMoney = totalServiceMoney;
+    }
+
+    public int getChiPhiKhac() {
+        return chiPhiKhac;
+    }
+
+    public void setChiPhiKhac(int chiPhiKhac) {
+        this.chiPhiKhac = chiPhiKhac;
+    }
+
+    public int getSoLanCapNhat() {
+        return soLanCapNhat;
+    }
+
+    public void setSoLanCapNhat(int soLanCapNhat) {
+        this.soLanCapNhat = soLanCapNhat;
+    }
+
+    public int getManagerId() {
+        return managerId;
+    }
+
+    public void setManagerId(int managerId) {
+        this.managerId = managerId;
+    }
+}

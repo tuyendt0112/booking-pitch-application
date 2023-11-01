@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/item_datsan"
+            android:icon="@drawable/order"
+            android:checked="true"
+            android:title="Booking Pitches"/>
+
+        <item android:id="@+id/item_sanbong"
+            android:icon="@drawable/stadium"
+            android:title="Pitches management"/>
+
+        <item android:id="@+id/item_giothidau"
+            android:icon="@drawable/ic_time"
+            android:title="Schedule management"/>
+
+        <item android:id="@+id/item_khachhang"
+            android:title="Customer management"
+            android:icon="@drawable/custommer"/>
+
+        <item android:title="Staff management"
+            android:icon="@drawable/employes"
+            android:id="@+id/item_nhanvien"/>
+
+        <item android:title="Personality"
+            android:id="@+id/item_man_hinh_ca_nhan"
+            android:icon="@drawable/ic_screen"/>
+
+        <item android:title="Announcement"
+            android:id="@+id/item_man_hinh_thong_bao"
+            android:iconTint="@color/black"
+            android:icon="@drawable/ic_notification"/>
+
+        <item android:title="Money request"
+            android:id="@+id/item_accept_naptien"
+            android:iconTint="@color/black"
+            android:icon="@drawable/icon_buy_history"/>
+
+        <item android:id="@+id/item_dangxuat"
+            android:icon="@drawable/logout"
+            android:title="Log out"/>
+    </group>
+</menu>
